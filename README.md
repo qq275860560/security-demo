@@ -7,7 +7,7 @@
 <dependency>
  	<groupId>com.github.qq275860560</groupId>
 	<artifactId>github-qq275860560-security</artifactId>
-	<version>20190510</version>
+	<version>20190512</version>
 </dependency>	
 ```
 参考pom.xml
