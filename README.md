@@ -1,5 +1,5 @@
 [登录认证授权组件](https://github.com/qq275860560/security)调用示例
-
+[TOC]
 # 使用方式
 ## spring-boot项目pom文件引入依赖
 ```
@@ -65,7 +65,8 @@ mvn spring-boot:run
 
 此时，本地会默认开启8080端口
 
-## 登录
+## 测试
+### 登录功能
 执行命令
 
 ```
@@ -75,7 +76,7 @@ curl -i -H "Content-Type:application/json;charset=UTF-8" \
 
 ```
 
-## 响应结果
+### 登录成功响应结果
 
 ```
 HTTP/1.1 200
@@ -97,16 +98,16 @@ Date: Wed, 08 May 2019 01:56:49 GMT
 响应头部Authorization对应的值就是token，以后带着token就可以高高兴兴的访问系统了,只要有权限就会访问
 
 
-## 访问
+### 接口访问
 
 ```
 curl -i -H "Content-Type:application/json;charset=UTF-8" \
-	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc2OTI5NjZ9.Hy3QL5h_VWYHrw0_Ht-CkOuPlpFFcnlvuvRWF3hRlnAj91E9YY6VzUxoZ-jPuIL1j9Tl3fz29GdPOvyUvwpN7tJ-6Es8ZBpBMec8NNIKhNq_5Yf972gAe_mMoP79LUaVFfai2KIJ6hHLS18ZzRjY73ssHG2bMS9r3hQCwdmcv3c" \
+	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc3MjEwOTd9.JJi-w_Y2dXZRTqn65Lrpdn3aturDrJmbop-mH2NeAZ_SS6QiYTPuDs9rMkU7j7GL2qLpUScncWID4Ny1usaeGx2ZPo_6yMSUal3yPVOU5tnmITAgqYqh1fLBnc3wnTe9giqwJ2XEqAfS15DsNtqwEHblvhjfdMhGql0hUwOTXA7cwVRLitM5WxttpYUjhpAc8A7we2KXPZ-Kd9G5abzjj6bRW_Y3DwoA28nCfmmYWKZzSw4vFQlZP8STXuo4aBT6MNcqH29K5-jKaG_iEf_so1EQvgaAErl19LzRnHyGxNducEvmmtywP1W6tQAvGEmROfmTrNm1as74_gn9AsMbjg" \
 	   -X POST http://localhost:8080/api/github/qq275860560/web/pageUser \
 	   -d '{"pageNum":1,"pageSize":10}'
 ```
 
-## 响应结果
+### 接口认证授权成功响应结果
 
 ```
 HTTP/1.1 200
