@@ -1,5 +1,6 @@
-[登录认证授权组件](https://github.com/qq275860560/security)调用示例
 [TOC]
+[登录认证授权组件](https://github.com/qq275860560/security)调用示例
+
 # 使用方式
 ## spring-boot项目pom文件引入依赖
 ```
