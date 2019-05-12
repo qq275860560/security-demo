@@ -9,22 +9,11 @@
 	<version>20190510</version>
 </dependency>	
 ```
+参考pom.xml
+
 ## 实现SecurityService接口
 ```
 
-	/**用户密码加密策略(如果使用spring默认的springBCryptPasswordEncoder,不需要重写该方法)
-	 * @param rawPassword
-	 * @return
-	 */
-	public String encode(CharSequence rawPassword) ;
-
-	/**用户密码核对策略(如果使用spring默认的springBCryptPasswordEncoder,不需要重写该方法)
-	 * @param rawPassword
-	 * @param encodedPassword
-	 * @return
-	 */
-	public boolean matches(CharSequence rawPassword, String encodedPassword);
-	
 	/**根据登录账号查询密码
 	  * 根据登录账号查询密码，此密码非明文密码，而是PasswordEncoder对明文加密后的密码，因为
      * spring security框架中数据库默认保存的是PasswordEncoder对明文加密后的密码
@@ -53,6 +42,7 @@
 	 */
 	public Set<String> getRoleNameSetByUsername(String username) ;
 ```
+参考com.github.qq275860560.service.impl.SecurityServiceImpl
 
 ## 编写业务代码
 参考com.github.qq275860560.controller.WebController
