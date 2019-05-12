@@ -12,7 +12,7 @@
 ```
 参考pom.xml
 
-## 实现SecurityService接口
+## 继承SecurityService抽象类的重写方法
 ```
 
 	/**根据登录账号查询密码
@@ -86,14 +86,14 @@ Date: Wed, 08 May 2019 01:56:49 GMT
 
 ```
 
-响应头部Authorization对应的值就是token，以后带着token就可以高高兴兴的访问系统了,只要有权限就会访问
+其中响应头部Authorization对应的值就是token，以后带着token就可以高高兴兴的访问系统了,只要有权限就能访问微服务
 
 
 ### 接口访问
 
 ```
 curl -i -H "Content-Type:application/json;charset=UTF-8" \
-	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc3MjEwOTd9.JJi-w_Y2dXZRTqn65Lrpdn3aturDrJmbop-mH2NeAZ_SS6QiYTPuDs9rMkU7j7GL2qLpUScncWID4Ny1usaeGx2ZPo_6yMSUal3yPVOU5tnmITAgqYqh1fLBnc3wnTe9giqwJ2XEqAfS15DsNtqwEHblvhjfdMhGql0hUwOTXA7cwVRLitM5WxttpYUjhpAc8A7we2KXPZ-Kd9G5abzjj6bRW_Y3DwoA28nCfmmYWKZzSw4vFQlZP8STXuo4aBT6MNcqH29K5-jKaG_iEf_so1EQvgaAErl19LzRnHyGxNducEvmmtywP1W6tQAvGEmROfmTrNm1as74_gn9AsMbjg" \
+	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc3MjY5OTR9.pfU4UCzYklirpp8AvauEQ97zf08H0y9WdrCXPV641P1wnUZYtuD9-KBaILPxTJtuvIiVk1CtzUkGAUEbejIZOA" \
 	   -X POST http://localhost:8080/api/github/qq275860560/web/pageUser \
 	   -d '{"pageNum":1,"pageSize":10}'
 ```
