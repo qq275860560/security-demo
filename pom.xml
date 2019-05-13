@@ -4,11 +4,16 @@
 
     <groupId>com.github.qq275860560</groupId>
 	<artifactId>github-qq275860560-security-demo</artifactId>
-	<version>20190513</version>
+	<version>20190514</version>
 	<packaging>jar</packaging>
 	<name>github-qq275860560-security-demo</name>
 	<description>github-qq275860560-security-demo</description>	
-	<url>https://github.com/qq275860560/security-demo</url> 	 
+	<url>https://github.com/qq275860560/security-demo</url> 
+	<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+    </parent>	 
  	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -17,7 +22,17 @@
 		 	<groupId>com.github.qq275860560</groupId>
 			<artifactId>github-qq275860560-security</artifactId>
 			<version>20190512</version>
-		</dependency>		
+		</dependency>	
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>2.9.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>2.9.2</version>
+		</dependency>	
 	</dependencies>
     <build>
 		<plugins>

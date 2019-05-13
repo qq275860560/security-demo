@@ -71,7 +71,7 @@ curl -i -H "Content-Type:application/json;charset=UTF-8" \
 
 ```
 HTTP/1.1 200
-Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTczNjcwMDl9.H1JcMvQQInYx8IM2iTkW-WQIN8eUQw-mBwRbbT0SBoXKeyXijNM3jvDpHLBisWNIobwPDIUqMIGEdk3MRC6TBAeTHxmZZacZbNenrsn9mB8qJU_P1zG7Hi6mRjrPBtdg0cEW44VGl6z_cUNgh1wjR7aMMhNzF7EQ0JxQkBl4P5g
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc4NTgzOTd9.aPKZg_KG_w2Suj5Fu2w9O77VIL_OHtg0tWICDD9xIvSkQY5LBAPMa7cNBw81B8wluMF7cfMJFOuHqirn9jdMZA
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -80,7 +80,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Content-Length: 45
-Date: Wed, 08 May 2019 01:56:49 GMT
+Date: Mon, 13 May 2019 18:26:37 GMT
 
 {"msg":"登录成功","code":200,"data":null}
 
@@ -93,7 +93,7 @@ Date: Wed, 08 May 2019 01:56:49 GMT
 
 ```
 curl -i -H "Content-Type:application/json;charset=UTF-8" \
-	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc3MjY5OTR9.pfU4UCzYklirpp8AvauEQ97zf08H0y9WdrCXPV641P1wnUZYtuD9-KBaILPxTJtuvIiVk1CtzUkGAUEbejIZOA" \
+	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc4NTgzOTd9.aPKZg_KG_w2Suj5Fu2w9O77VIL_OHtg0tWICDD9xIvSkQY5LBAPMa7cNBw81B8wluMF7cfMJFOuHqirn9jdMZA" \
 	   -X POST http://localhost:8080/api/github/qq275860560/web/pageUser \
 	   -d '{"pageNum":1,"pageSize":10}'
 ```
