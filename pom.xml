@@ -4,7 +4,7 @@
 
     <groupId>com.github.qq275860560</groupId>
 	<artifactId>github-qq275860560-security-demo</artifactId>
-	<version>20190514</version>
+	<version>20190515</version>
 	<packaging>jar</packaging>
 	<name>github-qq275860560-security-demo</name>
 	<description>github-qq275860560-security-demo</description>	
@@ -21,7 +21,7 @@
 		<dependency>
 		 	<groupId>com.github.qq275860560</groupId>
 			<artifactId>github-qq275860560-security</artifactId>
-			<version>20190512</version>
+			<version>20190515</version>
 		</dependency>	
 		<dependency>
 		    <groupId>io.springfox</groupId>
@@ -33,6 +33,11 @@
 		    <artifactId>springfox-swagger-ui</artifactId>
 		    <version>2.9.2</version>
 		</dependency>	
+		<dependency>
+		    <groupId>org.javassist</groupId>
+		    <artifactId>javassist</artifactId>
+		    <version>3.25.0-GA</version>
+		</dependency>
 	</dependencies>
     <build>
 		<plugins>

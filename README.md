@@ -7,12 +7,12 @@
 <dependency>
  	<groupId>com.github.qq275860560</groupId>
 	<artifactId>github-qq275860560-security</artifactId>
-	<version>20190513</version>
+	<version>20190515</version>
 </dependency>	
 ```
 参考pom.xml
 
-## 继承SecurityService抽象类的重写方法
+## 继承SecurityService抽象类重写方法
 ```
 
 	/**根据登录账号查询密码
@@ -43,10 +43,12 @@
 	 */
 	public Set<String> getRoleNameSetByUsername(String username) ;
 ```
-参考com.github.qq275860560.service.impl.SecurityServiceImpl
-
+具体参考com.github.qq275860560.service.impl.SecurityServiceImpl
+[接口说明](https://github.com/qq275860560/security/blob/master/src/main/java/com/github/qq275860560/service/SecurityService.java)
+[实现代码示例](https://github.com/qq275860560/security-demo/blob/master/src/main/java/com/github/qq275860560/service/impl/SecurityServiceImpl.java)
 ## 编写业务代码
-参考com.github.qq275860560.controller.WebController
+参考com.github.qq275860560.controller.UserController
+[业务代码示例](https://github.com/qq275860560/security-demo/blob/master/src/main/java/com/github/qq275860560/controller/UserController.java)
 
 ## 运行
 命令行切换到项目根目录下，执行
@@ -71,7 +73,7 @@ curl -i -H "Content-Type:application/json;charset=UTF-8" \
 
 ```
 HTTP/1.1 200
-Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc4NTgzOTd9.aPKZg_KG_w2Suj5Fu2w9O77VIL_OHtg0tWICDD9xIvSkQY5LBAPMa7cNBw81B8wluMF7cfMJFOuHqirn9jdMZA
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE4NzMyNDk3Njl9.ELXDySOUIE1oq1OuRG0GHh7sUIFYxbr92Mlpp6RgOMWpTIxhpxV5_0qrI52BtsabDCtAst611KXqYZckGOBRAg
 X-Content-Type-Options: nosniff
 X-XSS-Protection: 1; mode=block
 Cache-Control: no-cache, no-store, max-age=0, must-revalidate
@@ -80,7 +82,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Content-Length: 45
-Date: Mon, 13 May 2019 18:26:37 GMT
+Date: Wed, 15 May 2019 03:09:29 GMT
 
 {"msg":"登录成功","code":200,"data":null}
 
@@ -93,8 +95,8 @@ Date: Mon, 13 May 2019 18:26:37 GMT
 
 ```
 curl -i -H "Content-Type:application/json;charset=UTF-8" \
-	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE1NTc4NTgzOTd9.aPKZg_KG_w2Suj5Fu2w9O77VIL_OHtg0tWICDD9xIvSkQY5LBAPMa7cNBw81B8wluMF7cfMJFOuHqirn9jdMZA" \
-	   -X POST http://localhost:8080/api/github/qq275860560/web/pageUser \
+	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE4NzMyNDk3Njl9.ELXDySOUIE1oq1OuRG0GHh7sUIFYxbr92Mlpp6RgOMWpTIxhpxV5_0qrI52BtsabDCtAst611KXqYZckGOBRAg" \
+	   -X POST http://localhost:8080/api/github/qq275860560/user/pageUser \
 	   -d '{"pageNum":1,"pageSize":10}'
 ```
 
@@ -110,13 +112,26 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sat, 11 May 2019 20:30:43 GMT
+Date: Wed, 15 May 2019 03:10:07 GMT
 
 {"msg":"分页搜索成功","code":"OK","data":{"total":2,"list":[{"roles":"ROLE_ADMIN","userId":"1","username":"admin"},{"roles":"ROLE_ADMIN","userId":"2","username":"admin2"}]}}
 
 
+
 ```
 
+### 批量执行(登录+请求)
+```
+token=`curl -i -H "Content-Type:application/json;charset=UTF-8" \
+	  -X POST   http://localhost:8080/login \
+	  -d '{"username":"username1","password":"password1"}' | grep Authorization | cut -d' ' -f3` 
+echo 当前令牌token为$token 
+curl -i -H "Content-Type:application/json;charset=UTF-8" \
+	   -H "Authorization:Bearer $token" \
+	   -X POST http://localhost:8080/api/github/qq275860560/user/pageUser \
+	   -d '{"pageNum":1,"pageSize":10}'
+	   
+```
 # 温馨提醒
 
 * 此项目将会长期维护，增加或改进实用的功能

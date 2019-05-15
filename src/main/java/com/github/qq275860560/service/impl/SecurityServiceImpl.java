@@ -68,19 +68,19 @@ public class SecurityServiceImpl extends SecurityService {
 		return user_password.get(username);
 	}
 
-	private List<String> urls = Arrays.asList("/api/github/qq275860560/web/pageUser",
-			"/api/github/qq275860560/web/listUser", "/api/github/qq275860560/web/getUser",
-			"/api/github/qq275860560/web/saveUser", "/api/github/qq275860560/web/deleteUser",
-			"/api/github/qq275860560/web/updateUser", "/api/github/qq275860560/web/*");
+	private List<String> urls = Arrays.asList("/api/github/qq275860560/user/pageUser",
+			"/api/github/qq275860560/user/listUser", "/api/github/qq275860560/user/getUser",
+			"/api/github/qq275860560/user/saveUser", "/api/github/qq275860560/user/deleteUser",
+			"/api/github/qq275860560/user/updateUser", "/api/github/qq275860560/user/*");
 	private Map<String, List<String>> url_role = new HashMap<String, List<String>>() {
 		{
-			put("/api/github/qq275860560/web/pageUser", Arrays.asList("ROLE_USER"));
-			put("/api/github/qq275860560/web/listUser", Arrays.asList("ROLE_USER"));
-			put("/api/github/qq275860560/web/getUser", Arrays.asList("ROLE_USER"));
-			put("/api/github/qq275860560/web/saveUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
-			put("/api/github/qq275860560/web/deleteUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
-			put("/api/github/qq275860560/web/updateUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
-			put("/api/github/qq275860560/web/*", Arrays.asList("ROLE_ADMIN"));
+			put("/api/github/qq275860560/user/pageUser", Arrays.asList("ROLE_USER"));
+			put("/api/github/qq275860560/user/listUser", Arrays.asList("ROLE_USER"));
+			put("/api/github/qq275860560/user/getUser", Arrays.asList("ROLE_USER"));
+			put("/api/github/qq275860560/user/saveUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
+			put("/api/github/qq275860560/user/deleteUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
+			put("/api/github/qq275860560/user/updateUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
+			put("/api/github/qq275860560/user/*", Arrays.asList("ROLE_ADMIN"));
 
 		}
 	};
