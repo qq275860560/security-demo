@@ -10,7 +10,7 @@
 	<version>20190515</version>
 </dependency>	
 ```
-参考pom.xml
+参考[pom.xml](https://github.com/qq275860560/security-demo/blob/master/pom.xml)
 
 ## 继承SecurityService抽象类重写方法
 ```
