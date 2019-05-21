@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.qq275860560.respository.UserRespository;
 
-import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -44,9 +43,10 @@ public class UserController {
 		Map<String, Object> data = userRespository.pageUser();
 		return new HashMap<String, Object>() {
 			{
-				put("code", HttpStatus.OK);
-				put("msg", "分页搜索成功");
-				put("data", data);
+				 
+				put("code", HttpStatus.OK);//此字段可以省略，这里仿照蚂蚁金服的接口返回字段code，增加状态码说明
+				put("msg", "分页搜索成功");//此字段可以省略，这里仿照蚂蚁金服的接口返回字段msg，增加说明
+				put("data", data);								
 			}
 		};
 	}

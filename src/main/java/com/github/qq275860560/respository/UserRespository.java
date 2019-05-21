@@ -20,7 +20,7 @@ public class UserRespository {
 	public Map<String, Object> pageUser() throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		map.put("total", 2);
-		List<Map<String, Object>> list = Arrays.asList(new HashMap<String, Object>() {
+		List<Map<String, Object>> pageList = Arrays.asList(new HashMap<String, Object>() {
 			{
 				put("userId", "1");
 				put("username", "admin");
@@ -33,7 +33,7 @@ public class UserRespository {
 				put("roles", "ROLE_ADMIN");
 			}
 		});
-		map.put("list", list);
+		map.put("pageList", pageList);
 		return map;
 	}
 
