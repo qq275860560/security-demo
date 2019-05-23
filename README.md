@@ -7,7 +7,7 @@
 <dependency>
  	<groupId>com.github.qq275860560</groupId>
 	<artifactId>github-qq275860560-security</artifactId>
-	<version>20190518</version>
+	<version>20190523</version>
 </dependency>	
 ```
 参考[pom.xml](https://github.com/qq275860560/security-demo/blob/master/pom.xml)
@@ -63,9 +63,7 @@ mvn spring-boot:run
 执行命令
 
 ```
-curl -i -H "Content-Type:application/json;charset=UTF-8" \
-	  -X POST   http://localhost:8080/login \
-	  -d '{"username":"username1","password":"password1"}'
+curl -i -X POST   "http://localhost:8080/login?username=username1&password=password1"
 
 ```
 
@@ -94,10 +92,7 @@ Date: Wed, 15 May 2019 03:09:29 GMT
 ### 接口访问
 
 ```
-curl -i -H "Content-Type:application/json;charset=UTF-8" \
-	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE4NzMyNDk3Njl9.ELXDySOUIE1oq1OuRG0GHh7sUIFYxbr92Mlpp6RgOMWpTIxhpxV5_0qrI52BtsabDCtAst611KXqYZckGOBRAg" \
-	   -X POST http://localhost:8080/api/github/qq275860560/user/pageUser \
-	   -d '{"pageNum":1,"pageSize":10}'
+curl -i -X POST "http://localhost:8080/api/github/qq275860560/user/pageUser?pageNum=1&pageSize=10" 	   -H "Authorization:Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE4NzMyNDk3Njl9.ELXDySOUIE1oq1OuRG0GHh7sUIFYxbr92Mlpp6RgOMWpTIxhpxV5_0qrI52BtsabDCtAst611KXqYZckGOBRAg" 
 ```
 
 ### 接口认证授权成功响应结果
@@ -122,14 +117,9 @@ Date: Wed, 15 May 2019 03:10:07 GMT
 
 ### 批量执行(登录+请求)
 ```
-token=`curl -i -H "Content-Type:application/json;charset=UTF-8" \
-	  -X POST   http://localhost:8080/login \
-	  -d '{"username":"username1","password":"password1"}' | grep Authorization | cut -d' ' -f3` 
+token=`curl -i -X POST   "http://localhost:8080/login?username=username1&password=password1" | grep Authorization | cut -d' ' -f3` 
 echo 当前令牌token为$token 
-curl -i -H "Content-Type:application/json;charset=UTF-8" \
-	   -H "Authorization:Bearer $token" \
-	   -X POST http://localhost:8080/api/github/qq275860560/user/pageUser \
-	   -d '{"pageNum":1,"pageSize":10}'
+curl -i -X POST "http://localhost:8080/api/github/qq275860560/user/pageUser?pageNum=1&pageSize=10" 	   -H "Authorization:Bearer $token"
 	   
 ```
 # 温馨提醒

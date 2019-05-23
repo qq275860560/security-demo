@@ -23,7 +23,7 @@ public class ExceptionHandlerConfig {
 	@ResponseBody
 	@ExceptionHandler(value = Throwable.class)
 	public Map handle(Throwable t, HttpServletResponse response) {
-		log.trace("", t);
+		log.debug("", t);
 		response.setStatus(HttpStatus.BAD_REQUEST.value());
 		response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 		return new HashMap<String, Object>() {
