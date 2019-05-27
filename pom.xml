@@ -4,7 +4,7 @@
 
     <groupId>com.github.qq275860560</groupId>
 	<artifactId>github-qq275860560-security-demo</artifactId>
-	<version>20190523</version>
+	<version>2019052713</version>
 	<packaging>jar</packaging>
 	<name>github-qq275860560-security-demo</name>
 	<description>github-qq275860560-security-demo</description>	
@@ -21,8 +21,28 @@
 		<dependency>
 		 	<groupId>com.github.qq275860560</groupId>
 			<artifactId>github-qq275860560-security</artifactId>
-			<version>20190523</version>
+			<version>2019052713</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-jwt</artifactId>
+		    <version>1.0.10.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security.oauth</groupId>
+		    <artifactId>spring-security-oauth2</artifactId>
+		    <version>2.3.5.RELEASE</version>
 		</dependency>	
+		<dependency>
+	         <groupId>org.springframework.boot</groupId>
+	         <artifactId>spring-boot-starter-test</artifactId>
+	         <scope>test</scope>
+	     </dependency>
+	       <dependency>
+	        <groupId>org.apache.httpcomponents</groupId>
+	        <artifactId>httpclient</artifactId>
+	        <scope>test</scope>
+	    </dependency>
 		<dependency>
 		    <groupId>io.springfox</groupId>
 		    <artifactId>springfox-swagger2</artifactId>

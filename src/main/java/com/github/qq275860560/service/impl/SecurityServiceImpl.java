@@ -74,12 +74,12 @@ public class SecurityServiceImpl extends SecurityService {
 			"/api/github/qq275860560/user/updateUser", "/api/github/qq275860560/user/*");
 	private Map<String, List<String>> url_role = new HashMap<String, List<String>>() {
 		{
-			put("/api/github/qq275860560/user/pageUser", Arrays.asList("ROLE_USER"));
-			put("/api/github/qq275860560/user/listUser", Arrays.asList("ROLE_USER"));
-			put("/api/github/qq275860560/user/getUser", Arrays.asList("ROLE_USER"));
-			put("/api/github/qq275860560/user/saveUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
-			put("/api/github/qq275860560/user/deleteUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
-			put("/api/github/qq275860560/user/updateUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
+			put("/api/github/qq275860560/user/pageUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
+			put("/api/github/qq275860560/user/listUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
+			put("/api/github/qq275860560/user/getUser", Arrays.asList("ROLE_ADMIN", "ROLE_USER"));
+			put("/api/github/qq275860560/user/saveUser", Arrays.asList("ROLE_ADMIN" ));
+			put("/api/github/qq275860560/user/deleteUser", Arrays.asList("ROLE_ADMIN" ));
+			put("/api/github/qq275860560/user/updateUser", Arrays.asList("ROLE_ADMIN" ));
 			put("/api/github/qq275860560/user/*", Arrays.asList("ROLE_ADMIN"));
 
 		}
@@ -114,9 +114,8 @@ public class SecurityServiceImpl extends SecurityService {
 	private Map<String, Set<String>> user_role = new HashMap<String, Set<String>>() {
 		{
 			put("username1", new HashSet<String>() {
-				{
-					add("ROLE_ADMIN");
-					add("ROLE_HOME");
+				{					
+					add("ROLE_USER");
 				}
 			});
 			put("admin", new HashSet<String>() {

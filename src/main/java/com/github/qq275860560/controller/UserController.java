@@ -7,11 +7,9 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.github.qq275860560.respository.UserRespository;
 
@@ -22,8 +20,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author jiangyuanlin@163.com
  *
  */
-@Controller
-@ResponseBody
+@RestController
 @Slf4j
 public class UserController {
 
@@ -44,7 +41,7 @@ public class UserController {
 		return new HashMap<String, Object>() {
 			{
 				 
-				put("code", HttpStatus.OK);//此字段可以省略，这里仿照蚂蚁金服的接口返回字段code，增加状态码说明
+				put("code", HttpStatus.OK.value());//此字段可以省略，这里仿照蚂蚁金服的接口返回字段code，增加状态码说明
 				put("msg", "分页搜索成功");//此字段可以省略，这里仿照蚂蚁金服的接口返回字段msg，增加说明
 				put("data", data);								
 			}
@@ -62,7 +59,7 @@ public class UserController {
 		List<Map<String, Object>> data = userRespository.listUser();
 		return new HashMap<String, Object>() {
 			{
-				put("code", HttpStatus.OK);
+				put("code", HttpStatus.OK.value());
 				put("msg", "获取列表成功");
 				put("data", data);
 			}
@@ -80,7 +77,7 @@ public class UserController {
 		Map<String, Object> data=userRespository.getUser("");
 		return new HashMap<String, Object>() {
 			{
-				put("code", HttpStatus.OK);
+				put("code", HttpStatus.OK.value());
 				put("msg", "获取对象成功");
 				put("data", data);
 			}
@@ -99,7 +96,7 @@ public class UserController {
 		userRespository.saveUser(new HashMap<String,Object>() {{put("username",username);}});
 		return new HashMap<String, Object>() {
 			{
-				put("code", HttpStatus.OK);
+				put("code", HttpStatus.OK.value());
 				put("msg", "保存成功");
 				put("data", null);
 			}
@@ -119,7 +116,7 @@ public class UserController {
 		userRespository.updateUser(new HashMap<String,Object>() {{put("username",username);}});
 		return new HashMap<String, Object>() {
 			{
-				put("code", HttpStatus.OK);
+				put("code", HttpStatus.OK.value());
 				put("msg", "更新成功");
 				put("data", null);
 			}
@@ -138,7 +135,7 @@ public class UserController {
 		userRespository.deleteUser(id);
 		return new HashMap<String, Object>() {
 			{
-				put("code", HttpStatus.OK);
+				put("code", HttpStatus.OK.value());
 				put("msg", "删除成功");
 				put("data", null);
 			}
