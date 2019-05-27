@@ -29,7 +29,7 @@ import com.github.qq275860560.service.impl.MyRoleScopeAffirmativeBased;
 public class OAuthServerConfig {
 
 	@Configuration
-	@EnableResourceServer()
+	@EnableResourceServer
 	protected static class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
 		@Autowired
