@@ -26,8 +26,8 @@ public class OauthServiceImpl  extends OauthService {
 					put("clientId","client1");
 					put("secret",new BCryptPasswordEncoder().encode("secret1"));
 					put("registeredRedirectUri","http://localhost:8081/oauth2/client1/getCode");
-					put("scope","SCOPE_USER");
-					put("autoApproveScopes","SCOPE_USER");
+					put("scope","USER");//不需要前缀SCOPE_
+					put("autoApproveScopes","USER");//不需要前缀SCOPE_
 			 
 				}
 			});
@@ -36,8 +36,8 @@ public class OauthServiceImpl  extends OauthService {
 					put("clientId","admin");
 					put("secret",new BCryptPasswordEncoder().encode("admin"));
 					put("registeredRedirectUri","http://localhost:8081/oauth2/admin/getCode");
-					put("scope","SCOPE_ADMIN,SCOPE_USER");
-					put("autoApproveScopes","SCOPE_ADMIN,SCOPE_USER");
+					put("scope","ADMIN,USER");//不需要前缀SCOPE_
+					put("autoApproveScopes","ADMIN,USER");//不需要前缀SCOPE_
 				}
 			});
 		}

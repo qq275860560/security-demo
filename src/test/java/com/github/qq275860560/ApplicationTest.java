@@ -217,7 +217,7 @@ public class ApplicationTest {
 		String code = location.split("=")[1];
 
 		response = testRestTemplate.exchange(
-				"/oauth/token?grant_type=authorization_code&client_id=client1&client_secret=secret1&scope=SCOPE_USER&code="
+				"/oauth/token?grant_type=authorization_code&client_id=client1&client_secret=secret1&scope=USER&code="
 						+ code,
 				HttpMethod.GET, null, Map.class);
 		String access_token = (String) response.getBody().get("access_token");
@@ -254,7 +254,7 @@ public class ApplicationTest {
 		code = location.split("=")[1];
 
 		response = testRestTemplate.exchange(
-				"/oauth/token?grant_type=authorization_code&client_id=admin&client_secret=admin&scope=SCOPE_ADMIN&code="
+				"/oauth/token?grant_type=authorization_code&client_id=admin&client_secret=admin&scope=ADMIN&code="
 						+ code,
 				HttpMethod.GET, null, Map.class);
 		access_token = (String) response.getBody().get("access_token");
@@ -296,7 +296,7 @@ public class ApplicationTest {
 		String code = location.split("=")[1];
 
 		response = testRestTemplate.exchange(
-				"/oauth/token?grant_type=authorization_code&client_id=client1&client_secret=secret1&scope=SCOPE_USER&code="
+				"/oauth/token?grant_type=authorization_code&client_id=client1&client_secret=secret1&scope=USER&code="
 						+ code,
 				HttpMethod.GET, null, Map.class);
 		String refresh_token = (String) response.getBody().get("refresh_token");
@@ -340,7 +340,7 @@ public class ApplicationTest {
 		code = location.split("=")[1];
 
 		response = testRestTemplate.exchange(
-				"/oauth/token?grant_type=authorization_code&client_id=admin&client_secret=admin&scope=SCOPE_ADMIN&code="
+				"/oauth/token?grant_type=authorization_code&client_id=admin&client_secret=admin&scope=ADMIN&code="
 						+ code,
 				HttpMethod.GET, null, Map.class);
 		refresh_token = (String) response.getBody().get("refresh_token");

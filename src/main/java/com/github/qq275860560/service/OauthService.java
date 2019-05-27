@@ -47,11 +47,11 @@ public abstract class OauthService {
 		return null;
 	}
 	
+ 
 	/**token的过期时间(单位为秒)
 	 * @return
 	 */
-	public long getCodeExpirationSeconds() {
-		return 600L;
-		 
+	public int getAccessTokenValiditySeconds() {
+		return 10*365*24*3600;	 
 	}
 }

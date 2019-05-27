@@ -45,6 +45,7 @@ public class MyClientDetailsService implements ClientDetailsService {
 		// 客户端的权限
 		clientDetails.setScope( oauthService.getScopeByClientId(clientId));
 		clientDetails.setAutoApproveScopes(oauthService.getAutoApproveScopesByClientId(clientId));
+		clientDetails.setAccessTokenValiditySeconds(oauthService.getAccessTokenValiditySeconds());
 		return clientDetails;
 
 	}
