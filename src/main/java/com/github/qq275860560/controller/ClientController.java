@@ -15,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ClientController {
 
-	@RequestMapping(value = "/oauth2/get")
-	public Map<String, Object> get() {
+	@RequestMapping(value = "/oauth2/github/qq275860560/client/getClient")
+	public Map<String, Object> getClient() {
 		OAuth2Authentication oAuth2Authentication =  (OAuth2Authentication)SecurityContextHolder.getContext().getAuthentication();
 		String username= oAuth2Authentication.getUserAuthentication()==null?null:oAuth2Authentication.getUserAuthentication().getName();
 		String clientId=oAuth2Authentication.getOAuth2Request().getClientId(); 
@@ -30,8 +30,8 @@ public class ClientController {
 		};
 	}
 
-	@RequestMapping("/oauth2/save")
-	public Map<String, Object> save() {
+	@RequestMapping("/oauth2/github/qq275860560/client/saveClient")
+	public Map<String, Object> saveClient() {
 		OAuth2Authentication oAuth2Authentication =  (OAuth2Authentication)SecurityContextHolder.getContext().getAuthentication();
 		String username= oAuth2Authentication.getUserAuthentication()==null?null:oAuth2Authentication.getUserAuthentication().getName();
 		String clientId=oAuth2Authentication.getOAuth2Request().getClientId(); 

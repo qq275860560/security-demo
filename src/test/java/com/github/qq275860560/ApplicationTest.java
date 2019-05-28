@@ -109,17 +109,17 @@ public class ApplicationTest {
 		Assert.assertTrue(access_token.length() > 0);
 
 		// 错误(没有认证)
-		response = testRestTemplate.exchange("/oauth2/get", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient", HttpMethod.GET, null, Map.class);
 		Assert.assertEquals(401, response.getStatusCode().value());
 
 		// get正常
-		response = testRestTemplate.exchange("/oauth2/get?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
 
 		// save错误(没有权限)
-		response = testRestTemplate.exchange("/oauth2/save?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/saveClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(403, response.getStatusCode().value());
 
@@ -132,17 +132,17 @@ public class ApplicationTest {
 		Assert.assertTrue(access_token.length() > 0);
 
 		// 错误(没有认证)
-		response = testRestTemplate.exchange("/oauth2/get", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient", HttpMethod.GET, null, Map.class);
 		Assert.assertEquals(401, response.getStatusCode().value());
 
 		// get正常
-		response = testRestTemplate.exchange("/oauth2/get?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
 
 		// save正常
-		response = testRestTemplate.exchange("/oauth2/save?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/saveClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
@@ -161,17 +161,17 @@ public class ApplicationTest {
 		Assert.assertTrue(access_token.length() > 0);
 
 		// 错误(没有认证)
-		response = testRestTemplate.exchange("/oauth2/get", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient", HttpMethod.GET, null, Map.class);
 		Assert.assertEquals(401, response.getStatusCode().value());
 
 		// get正常
-		response = testRestTemplate.exchange("/oauth2/get?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
 
 		// save错误(没有权限)
-		response = testRestTemplate.exchange("/oauth2/save?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/saveClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(403, response.getStatusCode().value());
 
@@ -183,17 +183,17 @@ public class ApplicationTest {
 		Assert.assertTrue(access_token.length() > 0);
 
 		// 错误(没有认证)
-		response = testRestTemplate.exchange("/oauth2/get", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient", HttpMethod.GET, null, Map.class);
 		Assert.assertEquals(401, response.getStatusCode().value());
 
 		// get正常
-		response = testRestTemplate.exchange("/oauth2/get?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
 
 		// save正常
-		response = testRestTemplate.exchange("/oauth2/save?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/saveClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
@@ -225,17 +225,17 @@ public class ApplicationTest {
 		Assert.assertTrue(access_token.length() > 0);
 
 		// 错误(没有认证)
-		response = testRestTemplate.exchange("/oauth2/get", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient", HttpMethod.GET, null, Map.class);
 		Assert.assertEquals(401, response.getStatusCode().value());
 
 		// get正常
-		response = testRestTemplate.exchange("/oauth2/get?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
 
 		// save错误(没有权限)
-		response = testRestTemplate.exchange("/oauth2/save?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/saveClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(403, response.getStatusCode().value());
 
@@ -262,17 +262,17 @@ public class ApplicationTest {
 		Assert.assertTrue(access_token.length() > 0);
 
 		// 错误(没有认证)
-		response = testRestTemplate.exchange("/oauth2/get", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient", HttpMethod.GET, null, Map.class);
 		Assert.assertEquals(401, response.getStatusCode().value());
 
 		// get正常
-		response = testRestTemplate.exchange("/oauth2/get?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
 
 		// save正常
-		response = testRestTemplate.exchange("/oauth2/save?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/saveClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
@@ -311,17 +311,17 @@ public class ApplicationTest {
 		Assert.assertTrue(access_token.length() > 0);
 
 		// 错误(没有认证)
-		response = testRestTemplate.exchange("/oauth2/get", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient", HttpMethod.GET, null, Map.class);
 		Assert.assertEquals(401, response.getStatusCode().value());
 
 		// get正常
-		response = testRestTemplate.exchange("/oauth2/get?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
 
 		// save错误(没有权限)
-		response = testRestTemplate.exchange("/oauth2/save?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/saveClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(403, response.getStatusCode().value());
 
@@ -355,17 +355,17 @@ public class ApplicationTest {
 		Assert.assertTrue(access_token.length() > 0);
 
 		// 错误(没有认证)
-		response = testRestTemplate.exchange("/oauth2/get", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient", HttpMethod.GET, null, Map.class);
 		Assert.assertEquals(401, response.getStatusCode().value());
 
 		// get正常
-		response = testRestTemplate.exchange("/oauth2/get?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/getClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));
 
 		// save正常
-		response = testRestTemplate.exchange("/oauth2/save?access_token=" + access_token, HttpMethod.GET, null,
+		response = testRestTemplate.exchange("/oauth2/github/qq275860560/client/saveClient?access_token=" + access_token, HttpMethod.GET, null,
 				Map.class);
 		Assert.assertEquals(200, response.getStatusCode().value());
 		Assert.assertEquals(200, response.getBody().get("code"));

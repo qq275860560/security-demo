@@ -30,7 +30,7 @@ public class Swagger2Config {
 		tokenPar.name("Authorization").description("令牌token").modelRef(new ModelRef("string")).parameterType("header")
 				.required(false)
 				.defaultValue(
-						"Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbXSwiZXhwIjoxODc0MzY2MTUzLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjZhOTIxZmE2LWFiODQtNGRhOS05NTQxLTAzMzA4NTg0MGI1YSIsImNsaWVudF9pZCI6ImFkbWluIn0.a0tSI_fzDmWxsLyAyaDpJlAsJc-snNIqj5-3zrdbP3zSmNPiqdh0_B39SFbC0RS1R-lY6TEJ46FWh-OUd142pQ")
+						"Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsImV4cCI6MTg3NDQwMDQxMSwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIiwiUk9MRV9BRE1JTiJdLCJqdGkiOiI2NDNmMDUxYi0xMTdjLTQxYzItYjg3ZC0zNDZkMGVjNTUwN2QifQ.agsyUs1LENpgVhtQrEb-aoX6s0mAJphpnuXLEqkrWBu_EIxFsXswhmKTauVakEQHEnXMPTvKZ_zfFZWKIorTQQ")
 				.build();
 		pars.add(tokenPar.build());
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.any())

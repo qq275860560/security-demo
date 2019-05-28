@@ -51,7 +51,7 @@ public class OAuthServerConfig {
 			http.requestMatchers()	
 			.antMatchers("/oauth2/**")
 			.and()
-			.authorizeRequests().antMatchers("/**").authenticated();
+			.authorizeRequests().antMatchers("/oauth2/**").authenticated();
 			
 			http.authorizeRequests().withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
 				@Override
@@ -83,14 +83,14 @@ curl -i -X GET "http://localhost:8080/api/github/qq275860560/user/saveUser?usern
 //oauth2客户端模式
 token=`curl -i -X POST "http://client1:secret1@localhost:8080/oauth/token?grant_type=client_credentials"  | grep access_token | awk -F "\"" '{print $4}'`
 echo 当前token为$token
-curl -i -X POST "http://localhost:8080/oauth2/get?access_token=$token"
+curl -i -X POST "http://localhost:8080/oauth2/github/qq275860560/client/getClient?access_token=$token"
 
 
 
 //oauth2密码模式
 token=`curl -i -X POST "http://client1:secret1@localhost:8080/oauth/token?grant_type=password&username=username1&password=password1"  | grep access_token | awk -F "\"" '{print $4}'`
 echo 当前token为$token
-curl -i -X POST "http://localhost:8080/oauth2/get?access_token=$token"
+curl -i -X POST "http://localhost:8080/oauth2/github/qq275860560/client/getClient?access_token=$token"
 
 
 //oauth2认证码模式   
@@ -100,7 +100,7 @@ code=`curl -i -X GET "http://localhost:8080/oauth/authorize?client_id=client1&re
 echo 当前认证码为$code
 token=`curl -i -X POST "http://localhost:8080/oauth/token?grant_type=authorization_code&client_id=client1&client_secret=secret1&scope=USER&code=$code"  | grep access_token | awk -F "\"" '{print $4}'`
 echo 当前token为$token
-curl -i -X POST "http://localhost:8080/oauth2/get?access_token=$token"
+curl -i -X POST "http://localhost:8080/oauth2/github/qq275860560/client/getClient?access_token=$token"
 
 
 //oauth2刷新token
@@ -112,7 +112,7 @@ refresh_token=`curl -i -X POST "http://localhost:8080/oauth/token?grant_type=aut
 echo 当前refresh_token为$refresh_token
 token=`curl -i -X POST "http://localhost:8080/oauth/token?grant_type=refresh_token&client_id=client1&client_secret=secret1&refresh_token=${refresh_token}"  | grep access_token | awk -F "\"" '{print $4}'`
 echo 当前token为$token
-curl -i -X POST "http://localhost:8080/oauth2/get?access_token=$token"                    
+curl -i -X POST "http://localhost:8080/oauth2/github/qq275860560/client/getClient?access_token=$token"                    
 
 //oauth2校验token
 token=`curl -i -X POST "http://client1:secret1@localhost:8080/oauth/token?grant_type=client_credentials"  | grep access_token | awk -F "\"" '{print $4}'`

@@ -70,7 +70,7 @@ public class SecurityServiceImpl extends SecurityService {
 	private Map<String, Map<String, Object>> url_cache = new HashMap<String, Map<String, Object>>() {
 		{
 
-			put("/api/github/qq275860560/user/*", new HashMap<String, Object>() {
+			put("/api/github/qq275860560/user/**", new HashMap<String, Object>() {//请注意正则表达式的写法，是两个*号
 				{
 					put("roleNames", "ROLE_ADMIN");// 只需此角色即可访问
 				}
@@ -115,7 +115,7 @@ public class SecurityServiceImpl extends SecurityService {
 	 * 在授权阶段时，要调用此接口获取权限，之后跟登录用户的权限比较
 	 * 登录用户至少拥有一个角色，才能访问
 	 * 如果返回null或空集合或包含ROLE_ANONYMOUS，代表该url不需要权限控制，任何用户(包括匿名)用户都可以访问
-	 * 如果url符合某个正则表达式，应当把正则表达式的角色也返回，比如/api/a的角色为ROLE_1,ROLE_2, 而数据库中还存在/api/*的角色为ROLE_3,ROLE_4；由于/api/a属于正则表达式/api/*,所以应当返回ROLE_1,ROLE_2,ROLE_3,ROLE_4
+	 * 如果url符合某个正则表达式，应当把正则表达式的角色也返回，比如/api/a的角色为ROLE_1,ROLE_2, 而数据库中还存在/api/**的角色为ROLE_3,ROLE_4；由于/api/a属于正则表达式/api/*,所以应当返回ROLE_1,ROLE_2,ROLE_3,ROLE_4
 	 * @param url 请求路径（ip端口之后的路径）
 	 * @return 权限集合
 	 */
