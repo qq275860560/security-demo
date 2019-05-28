@@ -18,8 +18,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class MyRoleScopeAffirmativeBased extends AffirmativeBased {
-	 public MyRoleScopeAffirmativeBased() {		  
+public class MyScopeAffirmativeBased extends AffirmativeBased {
+	 public MyScopeAffirmativeBased() {		  
 			super(Arrays.asList(new WebExpressionVoter(),
 					new RoleVoter(), // 角色投票器,默认前缀为ROLE_,可以改成角色继承投票器
 					new ScopeVoter(),

@@ -33,7 +33,7 @@ public abstract class OauthService {
 	 * @param clientId
 	 * @return
 	 */
-	public List<String> getScopeByClientId(String clientId) {
+	public Set<String> getScopesByClientId(String clientId) {//不要SCOPE_开头，前端传过来也不要SCOPE_开头
 		// 从缓存或数据库中查找
 		return null;
 	}
@@ -42,11 +42,19 @@ public abstract class OauthService {
 	 * @param clientId
 	 * @return
 	 */
-	public List<String> getAutoApproveScopesByClientId(String clientId) {
+	public Set<String> getAutoApproveScopesByClientId(String clientId) {//不要SCOPE_开头，前端传过来也不要SCOPE_开头
 		// 从缓存或数据库中查找
 		return null;
 	}
 	
+	/**
+	 * @param url
+	 * @return
+	 */
+	public Set<String> getScopesByUrI(String url) {//SCOPE_开头
+		// 从缓存或数据库中查找
+		return null;
+	}
  
 	/**token的过期时间(单位为秒)
 	 * @return

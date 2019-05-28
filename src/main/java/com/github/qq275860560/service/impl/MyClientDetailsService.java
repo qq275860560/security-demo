@@ -43,7 +43,7 @@ public class MyClientDetailsService implements ClientDetailsService {
 		clientDetails.setAuthorizedGrantTypes(
 				Arrays.asList("authorization_code", "refresh_token", "implicit", "password", "client_credentials"));
 		// 客户端的权限
-		clientDetails.setScope( oauthService.getScopeByClientId(clientId));
+		clientDetails.setScope( oauthService.getScopesByClientId(clientId));
 		clientDetails.setAutoApproveScopes(oauthService.getAutoApproveScopesByClientId(clientId));
 		clientDetails.setAccessTokenValiditySeconds(oauthService.getAccessTokenValiditySeconds());
 		return clientDetails;

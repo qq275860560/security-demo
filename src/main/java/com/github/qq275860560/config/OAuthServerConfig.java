@@ -16,14 +16,14 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
-import com.github.qq275860560.security.MyFilterInvocationSecurityMetadataSource;
 import com.github.qq275860560.security.MyUserDetailsService;
 import com.github.qq275860560.service.impl.MyAuthorizationCodeServices;
 import com.github.qq275860560.service.impl.MyClientDetailsService;
 import com.github.qq275860560.service.impl.MyDefaultTokenServices;
 import com.github.qq275860560.service.impl.MyJwtAccessTokenConverter;
 import com.github.qq275860560.service.impl.MyJwtTokenStore;
-import com.github.qq275860560.service.impl.MyRoleScopeAffirmativeBased;
+import com.github.qq275860560.service.impl.MyScopeAffirmativeBased;
+import com.github.qq275860560.service.impl.MyScopeFilterInvocationSecurityMetadataSource;
 
 @Configuration
 public class OAuthServerConfig {
@@ -41,10 +41,10 @@ public class OAuthServerConfig {
 		}
 
 		@Autowired
-		private MyFilterInvocationSecurityMetadataSource myFilterInvocationSecurityMetadataSource;
+		private MyScopeFilterInvocationSecurityMetadataSource myScopeFilterInvocationSecurityMetadataSource;
 
 		@Autowired
-		private MyRoleScopeAffirmativeBased myRoleScopeAffirmativeBased;
+		private MyScopeAffirmativeBased myScopeAffirmativeBased;
 		
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
@@ -56,8 +56,8 @@ public class OAuthServerConfig {
 			http.authorizeRequests().withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
 				@Override
 				public <O extends FilterSecurityInterceptor> O postProcess(O o) {
-					o.setSecurityMetadataSource(myFilterInvocationSecurityMetadataSource);
-					o.setAccessDecisionManager(myRoleScopeAffirmativeBased);
+					o.setSecurityMetadataSource(myScopeFilterInvocationSecurityMetadataSource);
+					o.setAccessDecisionManager(myScopeAffirmativeBased);
 					return o;
 				}
 			});

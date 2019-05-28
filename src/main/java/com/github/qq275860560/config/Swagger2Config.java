@@ -30,7 +30,7 @@ public class Swagger2Config {
 		tokenPar.name("Authorization").description("令牌token").modelRef(new ModelRef("string")).parameterType("header")
 				.required(false)
 				.defaultValue(
-						"Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ1c2VybmFtZTEiLCJleHAiOjE4NzMyNDk3Njl9.ELXDySOUIE1oq1OuRG0GHh7sUIFYxbr92Mlpp6RgOMWpTIxhpxV5_0qrI52BtsabDCtAst611KXqYZckGOBRAg")
+						"Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbXSwiZXhwIjoxODc0MzY2MTUzLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjZhOTIxZmE2LWFiODQtNGRhOS05NTQxLTAzMzA4NTg0MGI1YSIsImNsaWVudF9pZCI6ImFkbWluIn0.a0tSI_fzDmWxsLyAyaDpJlAsJc-snNIqj5-3zrdbP3zSmNPiqdh0_B39SFbC0RS1R-lY6TEJ46FWh-OUd142pQ")
 				.build();
 		pars.add(tokenPar.build());
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select().apis(RequestHandlerSelectors.any())
