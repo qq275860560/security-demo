@@ -13,11 +13,14 @@ import org.springframework.util.StringUtils;
 
 import com.github.qq275860560.service.OauthService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @author jiangyuanlin@163.com
  *
  */
 @Component
+@Slf4j
 public class OauthServiceImpl  extends OauthService {
 	
 	private Map<String, Map<String,Object>> client_cache = new HashMap<String, Map<String,Object>>() {
@@ -162,6 +165,12 @@ public class OauthServiceImpl  extends OauthService {
 			}
 		}
 		return set;
+	}
+	public static void main(String[] args) {
+		String pattern = "/oauth/**";
+		String url = "/oauth2/github/qq275860560/client/getClient";
+		AntPathMatcher antPathMatcher = new AntPathMatcher();
+		log.info(""+antPathMatcher.match(pattern, url));
 	}
  
 }
