@@ -24,13 +24,13 @@ public class UserRespository {
 			{
 				put("userId", "1");
 				put("username", "admin");
-				put("roles", "ROLE_ADMIN");
+				put("roleNames", "ROLE_ADMIN");
 			}
 		}, new HashMap<String, Object>() {
 			{
 				put("userId", "2");
 				put("username", "admin2");
-				put("roles", "ROLE_ADMIN");
+				put("roleNames", "ROLE_ADMIN");
 			}
 		});
 		map.put("pageList", pageList);
@@ -41,13 +41,13 @@ public class UserRespository {
 		return Arrays.asList(new HashMap<String, Object>() {
 			{
 				put("userId", "1");
-				put("username", "admin");
+				put("roleNames", "admin");
 				put("roles", "ROLE_ADMIN");
 			}
 		}, new HashMap<String, Object>() {
 			{
 				put("userId", "2");
-				put("username", "admin2");
+				put("roleNames", "admin2");
 				put("roles", "ROLE_ADMIN");
 			}
 		});
@@ -57,7 +57,7 @@ public class UserRespository {
 		return new HashMap<String, Object>() {
 			{
 				put("userId", id);
-				put("username", "username" + id);
+				put("roleNames", "username" + id);
 				put("roles", "ROLE_ADMIN");
 			}
 		};

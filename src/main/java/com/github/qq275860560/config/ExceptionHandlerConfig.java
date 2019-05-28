@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -31,7 +30,7 @@ public class ExceptionHandlerConfig {
 			{
 				put("code", HttpStatus.BAD_REQUEST.value());
 				put("msg", "请求失败");
-				put("data",ExceptionUtils.getStackTrace(t));
+				put("data",t.getMessage());
 			}
 		};
 

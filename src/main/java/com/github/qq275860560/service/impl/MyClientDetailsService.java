@@ -2,7 +2,6 @@ package com.github.qq275860560.service.impl;
 
 import java.util.Arrays;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.oauth2.provider.ClientDetails;
@@ -10,6 +9,7 @@ import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.ClientRegistrationException;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.github.qq275860560.service.OauthService;
 
@@ -30,7 +30,7 @@ public class MyClientDetailsService implements ClientDetailsService {
 	public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
 		log.debug("登录或认证:获取客户端对应的SCOPE");
 		String secret = oauthService.getSecretByClientId(clientId);
-		if (StringUtils.isBlank(secret)) {
+		if (StringUtils.isEmpty(secret)) {
 			log.error(clientId + "客户端不存在");
 			throw new UsernameNotFoundException(clientId + "客户端不存在");
 		}
