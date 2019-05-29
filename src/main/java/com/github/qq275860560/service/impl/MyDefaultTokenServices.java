@@ -15,8 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 public class MyDefaultTokenServices extends DefaultTokenServices {
 	@Autowired
 	public MyDefaultTokenServices(MyJwtTokenStore myJwtTokenStore) {
-		this.setTokenStore(myJwtTokenStore);
-		this.setSupportRefreshToken(true);// 如果只是资源服务器，可以不设置
+		super.setTokenStore(myJwtTokenStore);
+		super.setSupportRefreshToken(true);// 如果只是资源服务器，可以不设置
 
 	}
 }

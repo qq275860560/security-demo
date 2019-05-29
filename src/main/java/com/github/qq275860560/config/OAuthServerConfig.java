@@ -48,10 +48,8 @@ public class OAuthServerConfig {
 		
 		@Override
 		public void configure(HttpSecurity http) throws Exception {
-			http.requestMatchers()	
-			.antMatchers("/oauth2/**")
-			.and()
-			.authorizeRequests().antMatchers("/oauth2/**").authenticated();
+			http.requestMatchers()				.antMatchers("/oauth2/**");
+			http.authorizeRequests().antMatchers("/oauth2/**").authenticated();
 			
 			http.authorizeRequests().withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
 				@Override
