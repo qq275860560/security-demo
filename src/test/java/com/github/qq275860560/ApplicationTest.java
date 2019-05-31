@@ -34,7 +34,7 @@ public class ApplicationTest {
 
 		// ROLE为普通客户端登录
 
-		ResponseEntity<Map> response = testRestTemplate.exchange("/login?username=username1&password=password1",
+		ResponseEntity<Map> response = testRestTemplate.exchange("/login?username=username1&password=123456",
 				HttpMethod.GET, null, Map.class);
 		String access_token = (String) response.getBody().get("access_token");
 		log.info("" + access_token);
@@ -65,7 +65,7 @@ public class ApplicationTest {
 		Assert.assertEquals(403, response.getStatusCode().value());
 
 		// ROLE为管理员客户端登录
-		response = testRestTemplate.exchange("/login?username=admin&password=admin", HttpMethod.GET, null, Map.class);
+		response = testRestTemplate.exchange("/login?username=admin&password=123456", HttpMethod.GET, null, Map.class);
 		String access_token2 = (String) response.getBody().get("access_token");
 		log.info("" + access_token2);
 		Assert.assertTrue(access_token2.length() > 0);

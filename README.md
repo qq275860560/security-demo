@@ -7,7 +7,7 @@
 <dependency>
  	<groupId>com.github.qq275860560</groupId>
 	<artifactId>github-qq275860560-security</artifactId>
-	<version>20190530</version>
+	<version>20190531</version>
 </dependency>	
 ```
 参考[pom.xml](https://github.com/qq275860560/security-demo/blob/master/pom.xml)
@@ -63,7 +63,7 @@ mvn spring-boot:run
 执行命令
 
 ```
-curl -i -X POST   "http://localhost:8080/login?username=username1&password=password1"
+curl -i -X POST   "http://localhost:8080/login?username=username1&password=123456"
 
 ```
 
